@@ -1,5 +1,5 @@
 import './Movies.css';
-import { Movie } from "./Movie";
+import { Movie } from "../Movie/Movie";
 
 function Movies (props) {
   return (

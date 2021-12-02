@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: 'Montserrat Alternates', sans-serif;
 }
+body {
+  scroll-behavior: smooth;
+}
 .container {
   margin:0 auto;
   max-width:1280px;
