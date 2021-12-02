@@ -10,6 +10,7 @@ function Movies (props) {
         img={item.Poster}
         type={item.Type}
         year={item.Year}
+        id={item.imdbID}
       />)}
     </div>
   )

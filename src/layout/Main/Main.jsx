@@ -2,6 +2,8 @@ import './Main.css';
 import React from 'react';
 import { Movies } from '../../components/Movies/Movies';
 import { Pages } from '../../components/Pages/Pages';
+import { Preloader } from '../../components/Preloader/Preloader';
+import { Search } from '../../components/Search/Search';
 
 class Main extends React.Component {
   
@@ -9,7 +11,7 @@ class Main extends React.Component {
     super();
     this.state = {
       movies:[],
-      url: 'http://www.omdbapi.com/?s=bos&apikey=451e28ea',
+      url: 'http://www.omdbapi.com/?s=Dune&apikey=451e28ea',
       pages: 0
     }
   }
@@ -35,7 +37,9 @@ class Main extends React.Component {
     return (
       <main className="content">
         <div className="container">
-          {movies.length ? <Movies movies={movies} /> : <h1> Loading </h1>}          
+          <Preloader />
+          <Search />
+          {movies.length ? <Movies movies={movies} /> : <Preloader />}          
           {movies.length ? <Pages pageChange = {this.pageChange} numbOfPages={pages} /> : <div></div>}
         </div>
       </main>
