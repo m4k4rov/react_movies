@@ -1,16 +1,34 @@
 import './Header.css';
+import React from 'react';
+import { Modal } from '../Modal/Modal';
 
-function Header() {
-  return (
-    <nav className="navigate">
-      <div className="navigate__wrapper">
-        <a href="!#" className="navigate__logo">React Movies</a>
-        <ul className="navigate__links">
-          <li className="navigate__link"><a href="!#">Repository</a></li>        
-        </ul>
-      </div>
-    </nav>
-  )
+class Header extends React.Component {
+
+  state = {
+    modal: false
+  }
+
+  toggleModal = () => {
+    this.state.modal ? this.setState({modal: false}) : this.setState({modal: true});
+  }
+
+  render() {
+
+    return (
+      <nav className="navigate">
+        <div className="navigate__wrapper">
+          <a href="!#" className="navigate__logo">React Movies</a>
+          <ul className="navigate__links">
+            <li className="navigate__link">
+              <div onClick={this.toggleModal} className="navigate__info">info</div>
+            </li>
+            <li className="navigate__link"><a href="!#">Repository</a></li>
+          </ul>
+        </div>
+        {this.state.modal ? <Modal toggle={this.toggleModal} /> : ''}
+      </nav>
+    )
+  }  
 }
 
 export {Header};

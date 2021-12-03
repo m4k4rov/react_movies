@@ -32,6 +32,13 @@
   height: 100%;
 }
 
+.navigate__info {
+  height: 100%;
+  padding: 40% 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
 .navigate__link {
   list-style: none;
   height: 100%;

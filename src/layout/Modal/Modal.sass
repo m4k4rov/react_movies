@@ -1,0 +1,35 @@
+.modal
+  position: fixed
+  display: flex
+  align-items: center
+  justify-content: center
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: rgba(0, 0, 0, 0.3)
+  z-index: 100
+  padding: 0 15px
+  &__close
+    position: absolute
+    width: 30px
+    height: 30px
+    background: #fff
+    border-radius: 50%
+    top: -60px
+    left: 50%
+    padding: 5px 11px
+    cursor: pointer
+    font-weight: 900
+  &__box
+    position: relative
+    max-width: 450px
+    width: 100%
+    min-height: 100px
+    background: #fff
+    padding: 20px
+    text-align: justify
+    border-radius: 7px
+    span
+      display: inline-block
+      width: 20px

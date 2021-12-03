@@ -2,7 +2,7 @@
   width: 100%
   margin: 10px 0
   &__input
-    width: 100%
+    width: calc( 100% - 100px )
     border: none
     border-bottom: 1px solid #5faafff8
     outline: none
@@ -13,3 +13,25 @@
     &:focus
       border-bottom: 3px solid #3e97fdf8
       margin-bottom: 0px
+  &__button
+    width: 90px
+    height: 30px
+    margin-left: 5px
+    border: none
+    background: #64c6ff
+    font-size: 18px
+    border-radius: 3px
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2)
+    cursor: pointer
+    transition: .1s
+    &:hover
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4)
+    &:active
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2)
+  &__radioGroup
+    margin-top: 10px
+    &-item
+      margin-right: 10px
+      span
+        margin-left: 5px
+

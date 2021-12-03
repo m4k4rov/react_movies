@@ -6,6 +6,10 @@
   gap: 15px;
 }
 
+.movies h3 {
+  font-size: 30px;
+}
+
 .card {
   background: #fff;
   -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1), -2px 0px 5px 2px rgba(0, 0, 0, 0.1);
