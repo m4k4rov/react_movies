@@ -5,13 +5,15 @@ import { Pages } from '../../components/Pages/Pages';
 import { Preloader } from '../../components/Preloader/Preloader';
 import { Search } from '../../components/Search/Search';
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 class Main extends React.Component {
   
   constructor (props) {
     super();
     this.state = {
       movies:[],
-      url: 'http://www.omdbapi.com/?s=Dune&apikey=451e28ea',
+      url: `https://www.omdbapi.com/?s=Dune&apikey=${API_KEY}`,
       pages: 0,
       loading: true
     }
@@ -23,6 +25,9 @@ class Main extends React.Component {
     .then(data => {
       data.totalResults ? this.setState({pages: Math.ceil(data.totalResults / 10)}) : this.setState({pages: 0});
       this.setState({movies: data.Search, loading: false});
+    })
+    .catch((err) => {
+      console.error(err);
     });
   }
 
@@ -36,7 +41,7 @@ class Main extends React.Component {
 
   searchMovie = (str, type) => {
     this.setState({loading: true});
-    let page = `http://www.omdbapi.com/?apikey=451e28ea&s=${str}`;
+    let page = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}`;
     if (type !== 'all') page = page + `&type=${type}`;
     this.setState({url: page});
     fetch(page)
