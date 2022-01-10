@@ -1,4 +1,4 @@
-import './Header.css';
+import './Header.sass';
 import React from 'react';
 import { Modal } from '../Modal/Modal';
 
@@ -28,7 +28,7 @@ class Header extends React.Component {
         {this.state.modal ? <Modal toggle={this.toggleModal} /> : ''}
       </nav>
     )
-  }  
+  }
 }
 
 export {Header};

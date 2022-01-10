@@ -1,4 +1,4 @@
-import './Main.css';
+import './Main.sass';
 import React from 'react';
 import { Movies } from '../../components/Movies/Movies';
 import { Pages } from '../../components/Pages/Pages';
@@ -8,7 +8,7 @@ import { Search } from '../../components/Search/Search';
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 class Main extends React.Component {
-  
+
   constructor (props) {
     super();
     this.state = {
@@ -19,7 +19,7 @@ class Main extends React.Component {
     }
   }
 
-  componentDidMount() {    
+  componentDidMount() {
     fetch(this.state.url)
     .then(response => response.json())
     .then(data => {
@@ -56,15 +56,15 @@ class Main extends React.Component {
     const {movies, pages, loading} = this.state;
     return (
       <main className="content">
-        <div className="container">        
+        <div className="container">
           <Search searchMovie={this.searchMovie} />
-          {!loading ? <Movies movies={movies} /> : <Preloader />}          
+          {!loading ? <Movies movies={movies} /> : <Preloader />}
           {!loading && pages>1 ? <Pages pageChange = {this.pageChange} numbOfPages={pages} /> : <></>}
         </div>
       </main>
     )
   }
-  
+
 }
 
 export {Main};

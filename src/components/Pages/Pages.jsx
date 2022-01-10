@@ -1,4 +1,4 @@
-import './Pages.css';
+import './Pages.sass';
 
 function Pages (props) {
   let pages = Array(props.numbOfPages).fill().map((e, i) => i + 1);

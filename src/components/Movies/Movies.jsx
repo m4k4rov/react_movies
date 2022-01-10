@@ -1,12 +1,12 @@
-import './Movies.css';
+import './Movies.sass';
 import { Movie } from "../Movie/Movie";
 
 function Movies (props) {
   const {movies = []} = props;
   return (
     <div className="movies">
-      {movies.length ? movies.map(item => <Movie 
-        key={item.imdbID} 
+      {movies.length ? movies.map(item => <Movie
+        key={item.imdbID}
         title={item.Title}
         img={item.Poster}
         type={item.Type}

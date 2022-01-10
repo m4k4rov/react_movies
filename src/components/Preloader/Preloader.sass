@@ -15,7 +15,7 @@
     opacity: 0
     display: inline-block
     &:after
-      font-family: FontAwesome;
+      font-family: FontAwesome
       content: ''
       width: 10px
       height: 10px
@@ -23,11 +23,11 @@
       background: #5bbdff
       display: block
 
-$key-frames-ms: 600ms, 500ms, 400ms, 300ms, 200ms, 100ms; 
+$key-frames-ms: 600ms, 500ms, 400ms, 300ms, 200ms, 100ms
 
 @each $current-ms in $key-frames-ms
     $i: index($key-frames-ms, $current-ms)
-    .transition-loader-inner label:nth-child(#{$i}) 
+    .transition-loader-inner label:nth-child(#{$i})
       -webkit-animation: loader 3s $current-ms infinite ease-in-out
       animation: loader 3s $current-ms infinite ease-in-out
 
@@ -41,7 +41,7 @@ $key-frames-ms: 600ms, 500ms, 400ms, 300ms, 200ms, 100ms;
   66%
     opacity: 1
     transform: translateX(0px) scale(1)
-  100% 
+  100%
     opacity: 0
     transform: translateX(300px) scale(2)
 
@@ -49,13 +49,12 @@ $key-frames-ms: 600ms, 500ms, 400ms, 300ms, 200ms, 100ms;
   0%
     opacity: 0
     -webkit-transform: translateX(-300px)
-  33% 
-    opacity: 1;
+  33%
+    opacity: 1
     -webkit-transform: translateX(0px)
   66%
     opacity: 1
     -webkit-transform: translateX(0px)
-  100% 
-    opacity: 0;
+  100%
+    opacity: 0
     -webkit-transform: translateX(300px)
-
